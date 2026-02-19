@@ -1,0 +1,42 @@
+#login {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  padding-top: 6%;
+}
+#login #judulapp {
+    font-weight: 700;
+    color: #FFF9ED;
+    letter-spacing: 2px;
+    /* text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.6); */
+}
+#login #username, #login #username, #login #password {
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+    background-color: rgba(255,249,237,0.7);
+    border: none;
+    color: #e7ae5e;
+}
+#login #username:hover,
+#login #password:hover,
+#login #username:focus,
+#login #password:focus {
+  background-color: rgba(0, 0, 0, 0.68);
+}
+#login #blogin {
+  font-size: 1.5em;
+  padding: 3px 6px;
+}
+#login hr {
+    border-top-color: rgba(255,249,237,0.5);
+}
+#login a {
+  color: #3DB5D1;
+}
+#login .copyright {
+    background-color: #FFF9ED;
+    color: #3F3029;
+}

@@ -1,0 +1,98 @@
+
+// THEME HEADER STYLE
+
+// TOP PATTERN
+#pattern{
+	background-color: #c81a1c;
+	img{
+		display: block;
+		margin: auto;
+	}
+}
+#judul{
+	background-color: #00053e;
+	img{
+		display: block;
+		margin: auto;
+	}
+}
+
+// MENU UTAMA
+#navigasi-utama{
+	margin-bottom: 0;
+	border: 0;
+	background-color: @warna-primer-a;
+	min-height: 66px;
+	a{
+		color: white;
+	}
+	.navbar-brand{
+		font-weight: 400;
+		font-size: 25px;
+		b{
+			font-weight: 700;
+			font-size: 33px;
+		}
+	}
+	.navbar-nav{
+		font-family: "Titillium Web", sans-serif;
+		font-weight: 400;
+		text-transform: uppercase;
+		a:hover{
+			color: @warna-tersier;
+		}
+		.dropdown.open a{
+			background-color: white;
+			color: @warna-hitam;
+		}
+		.dropdown-menu a{
+			color: @warna-hitam;
+			&:hover{
+				background-color: @warna-primer-a;
+				color: white;
+			}
+		}
+	}
+}
+
+// RESPONSIVE MENU UTAMA
+#menu-utama-btn, #user-menu-btn{
+	&.navbar-toggle{
+		border-radius: 5px;
+		width: 50px;
+		height: 50px;
+		padding: 5px;
+		text-align: center;
+		&:hover,&:focus{
+			background-color: transparent;
+		}
+		.menu-icon{
+			color: white;
+			font-size: 1.8em;
+		}
+	}
+}
+#menu-utama-btn{
+	&.navbar-toggle{
+		b{
+			color: white;
+			position: relative;
+			top: -5px;
+			font-weight: 400;
+		}
+		&.collapsed{
+			.menu-icon{
+				&:before{
+					content: "\e236";
+				}	
+			} 
+		}
+		.menu-icon{
+			top: 2px;
+			&:before{
+				content: "\e014";
+			}
+		}
+	}
+}
+// Eof MENU UTAMA

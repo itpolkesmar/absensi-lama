@@ -1,0 +1,134 @@
+
+// NAV TIGA DI TIAP HALAMAN
+
+// NAV TIGA TOP
+#tiga-top{
+	background-color: @warna-primer-b;
+	margin-bottom: 30px;
+	.container{
+		padding: 0;
+	}
+}
+.nav-items{
+	&.satu{
+		background-color: #bf893e;
+		a{
+			.icon{
+				.fa{
+					color: #bf893e;
+				}
+			}
+		}
+	}
+	&.dua{
+		background-color: #cbc60c;
+		a{
+			.icon{
+				.fa{
+					color: #cbc60c;
+				}
+			}
+		}
+	}
+	&.tiga{
+		background-color: darken(#a9ca23, 5%);
+		a{
+			.icon{
+				.fa{
+					color: darken(#a9ca23, 5%);
+				}
+			}
+		}
+	}
+	a{
+		display: block;
+		position: relative;
+		text-align: left;
+		padding: 10px 0;
+		&:hover{
+			text-decoration: none;
+			.icon{
+				background-color: white;
+			}
+			.label{
+				color: white;
+			}
+		}
+		.icon{
+			background-color: @warna-tersier;
+			border-radius: 50px;
+			width: 54px;
+			height: 54px;
+			position: relative;
+			text-align: center;
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1; /* Fix for IE7 */
+			*display: inline; /* Fix for IE7 */
+			.fa{
+				font-size: 24px;
+				color: @warna-primer-a;
+				line-height: 2.2em;
+			}
+		}
+		.label{
+			color: @warna-tersier;
+			font-family: "Titillium Web", sans-serif;
+			font-size: 24px;
+			font-weight: 400;
+			text-transform: uppercase;
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1; /* Fix for IE7 */
+			*display: inline; /* Fix for IE7 */
+			line-height: 1.82em;
+		}
+	}
+}
+
+@media (min-width: @screen-xs){
+	#tiga-top{
+		.container{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	.nav-items{
+		a{
+			.label{
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media (min-width: @screen-sm){
+	.nav-items{
+		a{
+			.icon{
+				display: block;
+				margin: auto;
+			}
+			.label{
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media (min-width: @screen-md){
+	.nav-items{
+		a{
+			text-align: center;
+			.icon, .label{
+				display: inline-block;
+				vertical-align: top;
+				zoom: 1; /* Fix for IE7 */
+				*display: inline; /* Fix for IE7 */
+			}
+		}
+	}
+}
+
+// Eof NAV TIGA TOP

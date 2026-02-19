@@ -1,0 +1,84 @@
+{!! Form::open(array('url' => \Request::path(), 'method' => 'POST', 'class'=>'form-horizontal form-'.\Config::get('claravel::ajax'),'id'=>'simpan')) !!}
+<div class="box-body">
+	<div class="form-group">
+		{!! Form::label('id_pegawai', 'Pegawai:', array('class' => 'col-sm-3 control-label')) !!}
+		<div class="col-sm-8">
+			{!! \PegawaiModel::getSelect('nip') !!}
+		</div>
+	</div>
+    <div class="form-group">
+        {!! Form::label('jns_ijin', 'Jenis:', array('class' => 'col-sm-3 control-label')) !!}
+        <div class="col-sm-8">
+            {!! \BerkasijinModel::getSelectIjin('jns_ijin') !!}
+        </div>
+    </div>
+	<div class="form-group">
+		{!! Form::label('tanggal_mulai', 'Tanggal Mulai:', array('class' => 'col-sm-3 control-label')) !!}
+		<div class="col-sm-8">
+			{!! Form::text('tanggal_mulai', null, array('class'=> 'form-control tgl')) !!}
+		</div>
+	</div>
+    <div class="form-group">
+        {!! Form::label('tanggal_selesai', 'Tanggal Selesai:', array('class' => 'col-sm-3 control-label')) !!}
+        <div class="col-sm-8">
+            {!! Form::text('tanggal_selesai', null, array('class'=> 'form-control tgl')) !!}
+        </div>
+    </div>
+	<div class="form-group">
+		{!! Form::label('file', 'File:', array('class' => 'col-sm-3 control-label')) !!}
+		<div class="col-sm-8">
+			{!! Form::file('file') !!}
+		</div>
+	</div>
+	<div class="form-group">
+		{!! Form::label('keterangan', 'Keterangan:', array('class' => 'col-sm-3 control-label')) !!}
+		<div class="col-sm-8">
+			{!! Form::textarea('keterangan', null, array('rows'=>'3','class'=> 'form-control')) !!}
+		</div>
+	</div>
+</div>
+<div class="box-footer">
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-7">
+            {!! ClaravelHelpers::btnSave() !!}
+        </div>
+    </div> 
+</div>
+{!! Form::close() !!}
+
+<script>
+    $(document).ready(function(){
+        var index_page = '{!!url()!!}/absensi/berkasijin';
+        $('select').select2();
+        $('.tgl').datetimepicker({'format': 'DD-MM-YYYY'});
+
+        $('#simpan').on('submit',function(e){
+            var $this = $(this);
+            e.preventDefault();
+            var formData = new FormData(this);
+            bootbox.confirm('Simpan data?',function(a){
+                if (a == true){
+                    $.ajax({
+                        url : index_page+'/create',
+                        type : 'POST',
+                        data : formData,
+                        contentType: false,
+                        processData: false,
+                        beforeSend: function(){
+                            preloader.on();
+                        },
+                        success:function(html){
+                            if(html=='1'){
+                                notification('Berhasil Disimpan','success');
+                                claravel_modal_close('konten_modal');
+                                $('#tampil').trigger('submit');
+                            }else{
+                                notification(html,'danger');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>

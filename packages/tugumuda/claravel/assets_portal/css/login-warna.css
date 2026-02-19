@@ -1,0 +1,50 @@
+body {
+	background-color: #cccccc;
+	background-image: url(../images/bg-login.jpg);
+	background-size: cover;
+	background-repeat: repeat;
+	/*background-position: center;*/
+}
+.box-login {
+    background-color: rgba(63,48,41,0.55);
+    padding: 20px;
+    /* border: 20px solid rgba(255,255,255, 0.55); */
+    box-shadow: 0 0 0 20px rgba(61,181,209,0.55);
+}
+.box-login h1, h2, h3, h4, h5, p {
+	font-family: 'Exo 2', sans-serif;
+}
+
+.box-login h1 {
+	font-size: 46px;
+}
+.box-login h2 {
+	font-size: 40px;
+}
+.box-login h3 {
+	font-size: 30px;
+}
+.box-login h4 {
+	font-size: 26px;
+}
+.box-login h5 {
+	font-size: 20px;
+}
+.box-login p {
+	font-size: 12px;
+}
+
+.btn-primary {
+color: #ffffff;
+background-color: #FFBC00;
+background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBAE41), to(#0044cc));
+background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+background-image: linear-gradient(to bottom, #FFCA05, #DFB30D);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+border-color: #0044cc #0044cc #002a80;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}

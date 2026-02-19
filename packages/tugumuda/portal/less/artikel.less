@@ -1,0 +1,77 @@
+
+// THEME ARTIKEL STYLE 
+
+// DAFTAR ARTIKEL
+.artikel{
+	&-daftar{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&-items{
+		margin: 0;
+		padding: 22px 7px;
+		background-color: #fffff5;
+		margin-bottom: 15px;
+		&.detail{
+			padding: 28px 20px;
+			figure{
+				figcaption{
+					font-size: 12px;
+					font-style: italic;
+				}
+			}
+		}
+	}
+	&-thumb{
+		width: 100%;
+		height: 163px;
+		display: block;
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&-judul{
+		font-size: 24px;
+		font-weight: 700;
+		margin: 10px 0;
+		a{
+			color: @warna-primer-a;
+		}
+		&.detail{
+			color: @warna-primer-b;
+			font-size: 30px;
+			margin: 30px 0;
+		}
+	}
+	&-waktu{
+		font-size: 12px;
+		font-weight: 700;
+		font-family: 'Source Sans Pro', sans-serif;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+	&-cuplikan{
+		font-weight: 400;
+		font-family: 'Source Sans Pro', sans-serif;
+	}
+	&-isi{
+		font-size: 1.2em;
+    	line-height: 1.62em;
+    	p{
+    		margin-bottom: 1.5em;
+    	}
+	}
+}
+
+@media (min-width: @screen-xs) {
+	.artikel{
+		&-items{
+			&.detail{
+				padding: 38px 42px;
+			}
+		}
+	}
+}
+// Eof DAFTAR ARTIKEL

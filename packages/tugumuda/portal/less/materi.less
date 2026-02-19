@@ -1,0 +1,165 @@
+
+// THEME METERI STYLE
+
+
+// DISPLAY MATERI
+.waktu-upload{
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+.materi{
+	&-item{
+		margin-bottom: 3.62em;
+	}
+	&-judul{
+		font-size: 18px;
+		a{
+			color: @warna-primer-a;
+		}
+	}
+	&-kontributor, &-kategori{
+		display: block;
+		font-weight: 700;
+		margin-bottom: .62em;
+		.fa{
+			margin-right: .3em;
+		}
+	}
+}
+// Eof DISPLAY MATERI
+
+// LIST LINGKUP PENGETAHUAN HOME
+#lingkup-pengetahuan{
+	background-color: #555555;
+	color: white;
+	padding-top: 60px;
+	padding-bottom: 50px;
+	.section-heading{
+		color: white;
+		margin-bottom: 1em;
+		.btn-group{
+			margin-left: .62em;
+			a{
+				color: @warna-hitam;
+			}
+		}
+	}
+	a{
+		color: @warna-tersier;
+	}
+	ul.list-point{
+		.materi-kategori{
+			color: @warna-sekunder-a;
+		}
+	}
+	.indeks{
+		color: white;
+		font-family: @font-family-sans-serif;
+		font-size: 12px;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+ul.list-point{
+	padding-left: 1.6em;
+	margin-bottom: 1.62em;
+	list-style: none;
+	li{
+		margin-bottom: .62em;
+		position: relative;
+		&:before{
+			position: absolute;
+			left: -1.6em;
+			top: 1px;
+			font-family: "FontAwesome";
+			content: "\f1db";
+			font-size: 13px;
+			color: white;
+		}
+	}
+	.materi-kategori{
+		font-family: @font-family-sans-serif;
+		font-size: 12px;
+		font-weight: 700;
+		margin-top: 0.2;
+		.fa{
+			color: white;
+		}
+	}
+}
+// Eof LIST LINGKUP PENGETAHUAN
+
+// LINGKUP PENGETAHUAN
+.panel-lingkup{
+	margin-bottom: 30px;
+	&.heading{
+		padding: 5px 15px;
+		margin-bottom: 15px;
+		&.satu { background-color: #bf893e; .icon .fa{ color: #bf893e } }
+		&.dua  { background-color: #cbc60c; .icon .fa{ color: #cbc60c } }
+		&.tiga { background-color: #179db0; .icon .fa{ color: #179db0 } }
+		&.empat{ background-color: #e98421; .icon .fa{ color: #e98421 } }
+		&.lima { background-color: #d20a41; .icon .fa{ color: #d20a41 } }
+		
+		.btn{
+			margin: 12px 10px;
+		}
+		.panah{
+			margin: 16px 5px;
+			.slick-arrow{
+				color: @warna-tersier;
+			}
+		}
+
+		.icon{
+			background-color: @warna-tersier;
+			border-radius: 50px;
+			width: 54px;
+			height: 54px;
+			position: relative;
+			text-align: center;
+			display: none;
+			.fa{
+				font-size: 24px;
+				color: @warna-primer-a;
+				line-height: 2.2em;
+			}
+		}
+		.label{
+			color: @warna-tersier;
+			font-family: "Titillium Web", sans-serif;
+			font-size: 26px;
+			font-weight: 400;
+			text-transform: uppercase;
+			display: block;
+			line-height: 1.62em;
+			white-space: normal;
+		}
+	}
+}
+
+@media (min-width: @screen-sm){
+	.panel-lingkup{
+		&.heading{
+			.icon{
+				display: inline-block;
+				vertical-align: top;
+				zoom: 1; /* Fix for IE7 */
+				*display: inline; /* Fix for IE7 */
+			}
+			.label{
+				display: inline-block;
+				vertical-align: top;
+				zoom: 1; /* Fix for IE7 */
+				*display: inline; /* Fix for IE7 */
+			}
+		}
+	}
+}
+
+// Eof LINGKUP PENGETAHUAN
+

@@ -1,0 +1,70 @@
+
+// THEME GALERI STYLE
+
+// GALERI
+#galeri{
+	.section-heading{
+		margin-bottom: 24px;
+	}
+}
+.galeri{
+	& &-item{
+		display: block;
+		position: relative;
+		height: 230px;
+		margin-bottom: 15px;
+		overflow: hidden;
+		img{
+			margin-bottom: 5px;
+			width: 100%;
+			height: auto;
+		}
+		h4{
+			font-size: 1em;
+			line-height: 1.4em;
+    		margin: 0;
+		}
+	}
+}
+
+section{
+	&.galeri{
+		background-color: white;
+		padding: 30px 15px;
+		margin-bottom: 40px;
+	}
+}
+
+@media (min-width: @screen-xs){
+	.galeri{
+		& &-item{
+			height: 380px;
+			h4{
+				font-size: 1.2em;
+				line-height: 1.2em;
+			}
+		}
+	}
+}
+
+@media (min-width: @screen-md){
+	.galeri{
+		&&-video{
+			.galeri-item{
+				height: 320px;
+			}
+		}
+		& &-item{
+			height: 218px;
+			&.dua{
+				height: 300px;
+			}
+			h4{
+				font-size: 1em;
+				line-height: 1.4em;
+			}
+		}
+	}
+}
+
+// Eof GALERI
