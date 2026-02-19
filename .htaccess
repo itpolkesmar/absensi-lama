@@ -1,9 +1,32 @@
+# 1. Matikan Opcache & XCache (Sesuai kebutuhan Anda)
 php_flag opcache.enable Off
 php_flag xcache.cacher Off
 php_flag xcache.size 0
 php_flag xcache.stat Off
-
 php_value max_execution_time 120
+
+# 2. Proteksi File .htaccess Sendiri
+<Files .htaccess>
+    Require all denied
+</Files>
+
+# 3. Matikan Directory Browsing (Mencegah orang melihat daftar file)
+Options -Indexes
+
+# 4. Keamanan Header (Mencegah XSS & Clickjacking)
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
+
+# 5. Blokir Akses ke File Sensitif (.env, .log, .sql, .git)
+<FilesMatch "\.(env|log|sql|git|sh|bak|ini)$">
+    Require all denied
+</FilesMatch>
+
+# 6. Konfigurasi Routing (Asli Anda dengan sedikit perbaikan)
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
@@ -11,11 +34,18 @@ php_value max_execution_time 120
 
     RewriteEngine On
     RewriteBase /absensi
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-    # Handle Front Controller...
+    # Blokir karakter berbahaya di URL (Basic SQLi/XSS filtering)
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule ^(.*)$ index.php [F,L]
+
+    # Redirect Trailing Slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ $1 [L,R=301]
+
+    # Handle Front Controller
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
